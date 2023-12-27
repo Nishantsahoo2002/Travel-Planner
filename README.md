@@ -8,7 +8,7 @@ Let's map out your itinerary, discover new destinations, and create memories tha
 2. CSS
 3. JAVASCRIPT
 4. PYTHON (AI)
-5. PHP
+5. PHPMYADMIN
 6. MYSQL
 7. CODE EDITOR (VS CODE)
 8. XAMPP SERVER
