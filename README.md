@@ -17,8 +17,11 @@ Let's map out your itinerary, discover new destinations, and create memories tha
 ***
 ### DEVELOPERS
 ~~~
+
 1. Biswajit Biswal
 2. Nishant S Sahoo
 3. Satyabrata Brahmachary
-4. Shishir kumar Mohanta
+4. Shishir K
+umar Mohanta
+
 ~~~
