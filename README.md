@@ -3,6 +3,7 @@
 Let's map out your itinerary, discover new destinations, and create memories that will last a lifetime. It also provides intelligent recommendations based on user preferences and real-time data.</p> 
 
 ***
+
 ### REQUIREMENTS:
 1. HTML
 2. CSS
