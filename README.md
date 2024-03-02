@@ -21,7 +21,6 @@ Let's map out your itinerary, discover new destinations, and create memories tha
 1. Biswajit Biswal
 2. Nishant S Sahoo
 3. Satyabrata Brahmachary
-4. Shishir K
-umar Mohanta
+4. Shishir Kumar Mohanta
 
 ~~~
