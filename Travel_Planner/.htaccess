@@ -13,4 +13,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteRule ^(.*)\.(html|htm|php|xml|js|css)$ /$1/ [L,R=301]
 
-RewriteRule ^(.*/)(.*/)(.*)\.(html|htm|php|xml|js|css)$ [I] /$1/$2/$3/ [L,R=301]
+RewriteRule ^(.*/)(.*)\.(html|htm|php|xml|js|css)$ [I] /$1/$2/ [L,R=301]
