@@ -1,16 +1,7 @@
+DirectoryIndex index.html
 RewriteEngine On
-
-# Check for existing files or directories first
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-# Remove the trailing slash for files with extensions
-# RewriteCond %{REQUEST_URI} ^(.*)/$
-# RewriteCond %{REQUEST_FILENAME} \.(html|htm|php|xml|js|css)$
-# RewriteRule ^(.*)/$ /$1 [R=301,L]
-
-# Remove the file extension and add a trailing slash
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule ^(.*)\.(html|htm|php|xml|js|css)$ /$1/ [L,R=301]
-
-RewriteRule ^(.*/)(.*)\.(html|htm|php|xml|js|css)$ [I] /$1/$2/ [L,R=301]
+RewriteCond %{REQUEST_URI} ^(.*)\.html
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^([a-zA-Z-]*).html index.html?var=$1 [QSA,L]
+# RewriteRule ^(.*)\.(html|htm|php|xml|js|css)$ /$1 [NC]
