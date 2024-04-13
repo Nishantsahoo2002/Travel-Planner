@@ -158,37 +158,38 @@
                     <div class="col-lg-8">
                         <h3 class="mb-2">Send us a message</h3>
                         <p class="mb-4">Our dedicated support team is ready to assist you around the clock, ensuring that your journey with us is seamless and stress-free. Whether it's via phone, email, or our convenient live chat feature, connecting with us is easy and hassle-free. <a href="./booking.html">Book Now</a>.</p>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                          <input type="hidden" name="access_key" value="132ef996-1c11-4161-bf3a-946a7954c120" />
+                          <div class="row g-3">
+                              <div class="col-md-6">
+                                  <div class="form-floating">
+                                      <input type="text" class="form-control border-0" id="name" name="name" placeholder="e.g touristvenues">
+                                      <label for="name">Your Name</label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-floating">
+                                      <input type="email" class="form-control border-0" id="email" name="email" placeholder="e.g touristvenues@gmail.com" required>
+                                      <label for="email">Email</label>
+                                  </div>
+                              </div>
+                              <div class="col-12">
+                                  <div class="form-floating">
+                                      <input type="text" class="form-control border-0" id="phone" name="phone" placeholder="phone">
+                                      <label for="phone">Phone</label>
+                                  </div>
+                              </div>
+                              <div class="col-12">
+                                  <div class="form-floating">
+                                      <textarea class="form-control border-0" name="message" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                      <label for="message">Message</label>
+                                  </div>
+                              </div>
+                              <div class="col-12">
+                                  <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                              </div>
+                          </div>
+                      </form>
                     </div>
                     <div class="col-12" id="map">
                         <div class="rounded">
