@@ -3021,7 +3021,7 @@
               Get <span class="text-warning">50% Off</span> On Your First
               Adventure Trip With Us. Get More Deal Offers Here.
             </p>
-            <form>
+            <form action="pay.php" method="post">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-floating">
@@ -3037,10 +3037,12 @@
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input
+                    oninput="disableEmailField()"
                       type="email"
                       class="form-control bg-white border-0"
                       id="email"
                       placeholder="Your Email"
+                      required
                     />
                     <label for="email">Your Email</label>
                   </div>
@@ -3050,6 +3052,7 @@
                     class="form-floating date"
                     id="date3"
                     data-target-input="nearest"
+                    
                   >
 
                     <input
@@ -3059,6 +3062,7 @@
                       placeholder="From date"
                       data-target="#date3"
                       data-toggle="datetimepicker"
+                      required
                     />
                     <label for="datetime">From date</label>
                   </div>
@@ -3077,13 +3081,14 @@
                       placeholder="Date & Time"
                       data-target="#date3"
                       data-toggle="datetimepicker"
+                      required
                     />
                     <label for="datetime">To Date</label>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-floating">
-                    <select class="form-select bg-white border-0" id="select1">
+                  <div class="form-floating" >
+                    <select class="form-select bg-white border-0" id="select1" required >
                       <option value="0">Choose a Destination</option>
                       <option value="1">TIKARPADA WILDLIFE SANCTUARY</option>
                       <option value="2">MAA HINGULA TEMPLE</option>
