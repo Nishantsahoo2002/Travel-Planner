@@ -130,3 +130,12 @@
 
 })(jQuery);
 
+var myPrice = document.getElementById("price");
+myPrice.disabled = true;
+
+function disableName(){
+    var nameField = document.getElementById('name');
+    if(nameField.value){
+        emailField.disabled = true;
+    }
+}
