@@ -130,10 +130,6 @@
 
 })(jQuery);
 
-document.getElementById("SearchBtn").addEventListener("click", function() {
-    window.location.href = "http://127.0.0.1:5000/";
-  });
-
 var myPrice = document.getElementById("price");
 myPrice.disabled = true;
 
