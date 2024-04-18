@@ -1,8 +1,8 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template
 import pickle
 
-placesdata = pickle.load(open('places_dict.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
+placesdata = pickle.load(open('C:\\xampp\\htdocs\\touristvenues\\Travel_Planner\\places_dict.pkl','rb'))
+similarity = pickle.load(open('C:\\xampp\htdocs\\touristvenues\\Travel_Planner\\similarity.pkl','rb'))
 
 def recommend(place):
     try:
