@@ -49,11 +49,17 @@ if ($success === true)
     $enddate = $_SESSION['enddate'];
     $sql = "INSERT INTO `guidebookings` (`user_id`,`guide_id`,`destination`,`startdate`,`enddate`,`transaction_id`, `razorpay_payment_id`, `status`, `price`) VALUES ('$email','$guide','$destination','$startdate','$enddate','$razorpay_order_id', '$razorpay_payment_id', 'success','$price')";
     if(mysqli_query($conn, $sql)){
-        echo "payment details inserted to db";
+        // echo "payment details inserted to db";
+        ?>
+        <script>
+            alert("Guide Booked Successfully.");
+            window.location.href = 'home.php';
+        </script>
+        <?php
     }
 
-    $html = "<p>Your payment was successful</p>
-             <p>Payment ID: {$_POST['razorpay_payment_id']}</p>";
+    // $html = "<p>Your payment was successful</p>
+    //          <p>Payment ID: {$_POST['razorpay_payment_id']}</p>";
 
     
 }
