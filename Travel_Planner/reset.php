@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute();
 
             // Create a reset link (replace with your domain)
-            $reset_link = "http://127.0.0.1:80/touristvenues/Travel_Planner/reset.php?token=" . $reset_token;
+            $reset_link = "http://127.0.0.1:80/touristvenues/Travel_Planner/reset.php";
 
             // Prepare email content
             $subject = "Reset Password for Your Account";
@@ -71,12 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
-
-<?php
-session_start();
-require "connectdb.php";
-require "validate.php";
-?>
+      
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -320,48 +315,24 @@ h2 {
 </head>
 
 <body>
-    <!-- <div id="loading"></div>  -->
     <?php
-if (isset($_POST['login'])) {
-    $email = mysqli_real_escape_string($conn, $_POST['emailid']);
-    $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
-    $pass = password_hash($password, PASSWORD_DEFAULT);
-    $emailquery = "select username,passwrd from userids where email='$email'";
-    $query = mysqli_query($conn, $emailquery);
-    $emailcount = mysqli_num_rows($query);
-    // $row = $query->fetch_assoc();
-    $row = mysqli_fetch_assoc($query);
-    $_SESSION['username']= $row['username'];
-    if ($emailcount > 0 && password_verify($password,$row["passwrd"])) {?>
-        <script>
-            location.replace("home.php");
-        </script>
-    <?php 
-    }else{?>
-        <script>
-            alert("Invalid Login ID or Password!");
-        </script>
-    <?php 
-    }
-}
-if (isset($_POST['register'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
+if (isset($_POST['reset'])) {
     $email = mysqli_real_escape_string($conn, $_POST['emailid']);
     $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['CpassWord']);
     $pass = password_hash($password, PASSWORD_BCRYPT);
-    // $cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
     $emailquery = "select * from userids where email='$email' ";
     $query = mysqli_query($conn, $emailquery);
     $emailcount = mysqli_num_rows($query);
 
-    if ($emailcount > 0) { ?>
+    if (!($emailcount > 0)) { ?>
         <script>
-            alert("email already exists! Please Sign in");
+            alert("email record not found!!");
         </script>
         <?php
     } else {
-        if (ValidateMail($email) == "valid") {
+        $row = mysqli_fetch_assoc($query);
+        if ($email === $row['email']) {
             if (password_verify($password,$pass)){
                 $insertquery = "insert into userids( username, email, passwrd) values('$username ','$email','$pass')";
                 $iquery = mysqli_query($conn, $insertquery);
@@ -397,51 +368,24 @@ if (isset($_POST['register'])) {
 ?>
     <div class="wrapper">
         <div class="form-wrapper sign-up">
-            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-                <h2>Sign Up</h2>
-                <div class="input-group">
-                    <input type="text" name="username" placeholder="Username" required>
-                    <label for="">Username</label>
-                </div>
+        <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+                <h2>Forgot Password</h2>
                 <div class="input-group">
                     <input type="email"  name="emailid" placeholder="Email id" required>
                     <label for="">Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" name="PassWord" placeholder="Password" required>
-                    <label for="">Password</label>
+                    <input type="password" name="PassWord" placeholder=" New Password" required>
+                    <label for="">New Password</label>
                 </div>
-
                 <div class="input-group">
-                    <input type="password" name="CpassWord" placeholder="Confirm Password " required>
-                    <label for=""> Confirm Password</label>
+                    <input type="password" name="CpassWord" placeholder="Retype new Password " required>
+                    <label for="">Retype New Password</label>
                 </div>
-                
-                <button type="submit" name="register" class="btn">Sign Up</button>
-                <div class="sign-link">
+                <button type="submit" name="reset" class="btn">Reset Now</button>
+                <!-- <div class="sign-link">
                     <p>Existing user? <a href="#" class="signIn-link">Sign In</a></p>
-                </div>
-            </form>
-        </div>
-
-        <div class="form-wrapper sign-in">
-            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-                <h2>Login</h2>
-                <div class="input-group">
-                    <input type="email" name="emailid" placeholder="Email ID" required>
-                    <label for="">Email</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" name="PassWord" placeholder="Password" required>
-                    <label for="">Password</label>
-                </div>
-                <div class="forgot-pass">
-                    <a href="#">Forgot Password?</a>
-                </div>
-                <button type="submit" name="login" class="btn">Login</button>
-                <div class="sign-link">
-                    <p>New User? <a href="#" class="signUp-link">Sign Up</a></p>
-                </div>
+                </div> -->
             </form>
         </div>
     </div>
@@ -479,4 +423,3 @@ signInLink.addEventListener('click', () => {
 
 </body>
 </html>
-
