@@ -318,22 +318,25 @@
           class="position-relative rounded-pill w-100 mx-auto p-5"
           style="background: rgba(26, 19, 123, 0.8)"
         >
+        <form id="searchForm" method="POST" action="http://127.0.0.1:5000/recommend">
           <input
+            name="user_input"
             class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5"
             type="text"
-            placeholder="Eg: Jagannath Temple"
+            placeholder="Search place name"
           />
-          <!--button
+          <button
             id="SearchBtn"
-            type="button"
+            type="submit"
             class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2"
             style="top: 50%; right: 46px; transform: translateY(-50%)"
           >
           Search
-          </button-->
-          <a href="http://127.0.0.1:5000/" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%)"
+          </button>
+        </form>
+          <!--a href="http://127.0.0.1:5000/" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%)"
             >Search</a
-          >
+          -->
         </div>
       </div>
     </div>
