@@ -242,10 +242,70 @@ h2 {
 
 <body>
     <!-- <div id="loading"></div>  -->
+    <?php
+if (isset($_POST['login'])) {
+    $email = mysqli_real_escape_string($conn, $_POST['emailid']);
+    $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
+    $pass = password_hash($password, PASSWORD_DEFAULT);
+    $emailquery = "select passwrd from userids where email='$email'";
+    $query = mysqli_query($conn, $emailquery);
+    $emailcount = mysqli_num_rows($query);
+    $row = $query->fetch_assoc();
+    if ($emailcount > 0 && password_verify($password,$row["passwrd"])) {
+        header('Location: index.html');
+    }else{?>
+        <script>
+            alert("Invalid Login ID or Password!");
+        </script>
+    <?php 
+    }
+}
+if (isset($_POST['register'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['emailid']);
+    $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
+    $cpassword = mysqli_real_escape_string($conn, $_POST['CpassWord']);
+    $pass = password_hash($password, PASSWORD_DEFAULT);
+    // $cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
+    $emailquery = "select * from userids where email='$email' ";
+    $query = mysqli_query($conn, $emailquery);
+    $emailcount = mysqli_num_rows($query);
+
+    if ($emailcount > 0) { ?>
+        <script>
+            alert("email already exists");
+        </script>
+        <?php
+    } else {
+        if (password_verify($cpassword,$pass) == true) {
+            $insertquery = "insert into userids( username, email, passwrd) values('$username ','$email','$pass')";
+            $iquery = mysqli_query($conn, $insertquery);
+            if ($iquery) { ?>
+                <script>
+                    alert("Insert Successful");
+                </script>
+                <?php
+                // header('Location: http://192.168.11.17/tpp/?');
+                // $conn->close();
+            } else { ?>
+                <script>
+                    alert("NO Connection ");
+                </script>
+                <?php
+            }
+        } else {?>
+            <script>
+                alert("password are not matching");
+            </script>
+            <?php
+        }
+    }
+}
+?>
 
     <div class="wrapper">
         <div class="form-wrapper sign-up">
-            <form action="">
+            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                 <h2>Sign Up</h2>
                 <div class="input-group">
                     <input type="text" required>
