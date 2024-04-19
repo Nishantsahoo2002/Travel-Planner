@@ -43,7 +43,11 @@ if ($success === true)
     $razorpay_payment_id = $_POST['razorpay_payment_id'];
     $email = $_SESSION['email'];
     $price = $_SESSION['price'];
-    $sql = "INSERT INTO `bookingpayments` (`transaction_id`, `razorpay_payment_id`, `status`, `email`, `price`) VALUES ('$razorpay_order_id', '$razorpay_payment_id', 'success', '$email', '$price')";
+    $destination = $_SESSION['destination'];
+    $guide = (int)$_SESSION['guide'];
+    $startdate = $_SESSION['startdate'];
+    $enddate = $_SESSION['enddate'];
+    $sql = "INSERT INTO `guidebookings` (`user_id`,`guide_id`,`destination`,`startdate`,`enddate`,`transaction_id`, `razorpay_payment_id`, `status`, `price`) VALUES ('$email','$guide','$destination','$startdate','$enddate','$razorpay_order_id', '$razorpay_payment_id', 'success','$price')";
     if(mysqli_query($conn, $sql)){
         echo "payment details inserted to db";
     }
