@@ -235,14 +235,15 @@ use PHPmailer\PHPmailer\Exception;
 
 <style>
     #loading {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #ffffff url(" ./img/loader.gif") no-repeat center;
-        z-index: 99999;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #ffffff url(" ./img/loader.gif")
+        no-repeat center;
+      z-index: 99999;
     }
-</style>
-<!-- preloader section end -->
+  </style>
+  <!-- preloader section end -->
 
 
 <body>
@@ -257,41 +258,41 @@ use PHPmailer\PHPmailer\Exception;
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
-        <!-- <div id="loading"></div>  -->
-        <?php
-        if (isset($_POST['login'])) {
-            $email = mysqli_real_escape_string($conn, $_POST['emailid']);
-            $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
-            $pass = password_hash($password, PASSWORD_DEFAULT);
-            $emailquery = "select username,passwrd from userids where email='$email'";
-            $query = mysqli_query($conn, $emailquery);
-            $emailcount = mysqli_num_rows($query);
-            // $row = $query->fetch_assoc();
-            $row = mysqli_fetch_assoc($query);
-            $_SESSION['username'] = $row['username'];
-            if ($emailcount > 0 && password_verify($password, $row["passwrd"])) { ?>
-                <script>
-                    location.replace("home.php");
-                </script>
-            <?php
-            } else { ?>
-                <script>
-                    alert("Invalid Login ID or Password!");
-                </script>
-            <?php
-            }
-        }
-        if (isset($_POST['register'])) {
-            $username = mysqli_real_escape_string($conn, $_POST['username']);
-            $email = mysqli_real_escape_string($conn, $_POST['emailid']);
-            $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
-            $cpassword = mysqli_real_escape_string($conn, $_POST['CpassWord']);
-            $pass = password_hash($password, PASSWORD_BCRYPT);
-            // $cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
-            $emailquery = "select * from userids where email='$email' ";
-            $query = mysqli_query($conn, $emailquery);
-            $emailcount = mysqli_num_rows($query);
+<body>
+    <!-- <div id="loading"></div>  -->
+    <?php
+if (isset($_POST['login'])) {
+    $email = mysqli_real_escape_string($conn, $_POST['emailid']);
+    $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
+    $pass = password_hash($password, PASSWORD_DEFAULT);
+    $emailquery = "select username,passwrd from userids where email='$email'";
+    $query = mysqli_query($conn, $emailquery);
+    $emailcount = mysqli_num_rows($query);
+    // $row = $query->fetch_assoc();
+    $row = mysqli_fetch_assoc($query);
+    $_SESSION['username']= $row['username'];
+    if ($emailcount > 0 && password_verify($password,$row["passwrd"])) {?>
+        <script>
+            location.replace("home.php");
+        </script>
+    <?php 
+    }else{?>
+        <script>
+            alert("Invalid Login ID or Password!");
+        </script>
+    <?php 
+    }
+}
+if (isset($_POST['register'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['emailid']);
+    $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
+    $cpassword = mysqli_real_escape_string($conn, $_POST['CpassWord']);
+    $pass = password_hash($password, PASSWORD_BCRYPT);
+    // $cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
+    $emailquery = "select * from userids where email='$email' ";
+    $query = mysqli_query($conn, $emailquery);
+    $emailcount = mysqli_num_rows($query);
 
             if ($emailcount > 0) { ?>
                 <script>
@@ -446,16 +447,16 @@ use PHPmailer\PHPmailer\Exception;
             });
         </script>
 
-        <script src="script.js"></script>
-        <!-- preloader section start -->
-        <script>
-            var preloader = document.getElementById("loading");
-            setTimeout(function () {
-                preloader.style.display = "none";
-            }, 0000); // 3000 milliseconds = 3 seconds
-        </script>
-        <!-- preloader section End -->
-    </body>
+    <script src="script.js"></script>
+<!-- preloader section start -->
+    <script>
+        var preloader = document.getElementById("loading");
+        setTimeout(function () {
+          preloader.style.display = "none";
+        }, 0000); // 3000 milliseconds = 3 seconds
+      </script>
+      <!-- preloader section End -->
+</body>
 
     </html>
     <script src="script.js"></script>
