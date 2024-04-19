@@ -271,7 +271,7 @@ if (isset($_POST['register'])) {
     $email = mysqli_real_escape_string($conn, $_POST['emailid']);
     $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['CpassWord']);
-    $pass = password_hash($password, PASSWORD_DEFAULT);
+    $pass = password_hash($password, PASSWORD_BCRYPT);
     // $cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
     $emailquery = "select * from userids where email='$email' ";
     $query = mysqli_query($conn, $emailquery);
@@ -283,27 +283,35 @@ if (isset($_POST['register'])) {
         </script>
         <?php
     } else {
-        if ((password_verify($cpassword,$pass) == true) && (ValidateMail($email) == true)) {
-            $insertquery = "insert into userids( username, email, passwrd) values('$username ','$email','$pass')";
-            $iquery = mysqli_query($conn, $insertquery);
-            if ($iquery) { ?>
-                <script>
-                    alert("Registration Successful");
-                </script>
-                <?php
-                // header('Location:');
-                // $conn->close();
+        if (ValidateMail($email) == true) {
+            if (password_verify($password,$pass)){
+                $insertquery = "insert into userids( username, email, passwrd) values('$username ','$email','$pass')";
+                $iquery = mysqli_query($conn, $insertquery);
+                if ($iquery) { ?>
+                    <script>
+                        alert("Registration Successful");
+                    </script>
+                    <?php
+                    // header('Location:');
+                    // $conn->close();
+                } else { ?>
+                    <script>
+                        alert("NO Connection ");
+                    </script>
+                    <?php
+                }
             } else { ?>
                 <script>
-                    alert("NO Connection ");
-                </script>
-                <?php
+                        alert("Password are not matching !! ");
+                    </script>
+                    <?php
             }
         } else {?>
             <script>
-                alert("password are not matching");
+                alert("Invalid Email !!");
             </script>
             <?php
+            header('Location: login.php');
         }
     }
 }

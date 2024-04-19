@@ -47,7 +47,7 @@ function validateEmailWithSMTP($recipient)
         $mail->Body = 'This is the HTML message body <b>in bold!</b>';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         if ($mail->send()) {
-            sleep(3);
+            // sleep(3);
             // require 'imapmail.php';
             // Connect to the IMAP server
             $imapServer = '{imap.gmail.com:993/imap/ssl/novalidate-cert}INBOX';
@@ -81,20 +81,20 @@ function validateEmailWithSMTP($recipient)
                         }
                     }
                 } else {
-                    return true;
+                    return false;
                 }
                 // Close the IMAP connection
                 imap_close($imap);
             } else {
-                echo "Failed to connect to the IMAP server.\n";
+                // echo "Failed to connect to the IMAP server.\n";
             }
         } else {
-            echo "Error: " . $mail->ErrorInfo;
+            // echo "Error: " . $mail->ErrorInfo;
             return false; // Likely invalid
         }
     } catch (Exception $e) {
         // Handle potential errors gracefully
-        echo "Exception Error: " . $mail->ErrorInfo;
+        //echo "Exception Error: " . $mail->ErrorInfo;
         return false; // Assume invalid in case of errors
     }
     // $mail->SmtpClose();
@@ -112,14 +112,6 @@ function ValidateMail($recipient)
                 return false;
                 // echo "Email address is invalid.";
             }
-            /*$mail->addAddress($recipient); // Add recipient address
-            $mail->getSMTPInstance()->mail($recipient); // Initiate RCPT TO
-
-            if ($mail->ErrorInfo === '') {
-                echo "Email address likely exists.\n";
-            } else {
-                echo "Email address likely does not exist: " . $mail->ErrorInfo . "\n";
-            }*/
         } else {
             return false;
             // echo "$recipient has a invalid domain\n";
