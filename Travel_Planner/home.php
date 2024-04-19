@@ -124,7 +124,7 @@ if(!isset($_SESSION['username'])){
                 <a href="#" class="dropdown-item"
                   ><i class="fas fa-cog me-2"></i> Account Settings</a
                 > -->
-                <a href="#" class="dropdown-item"
+                <a href="logout.php" class="dropdown-item"
                   ><i class="fas fa-power-off me-2"></i> Log Out</a
                 >
               </div>
