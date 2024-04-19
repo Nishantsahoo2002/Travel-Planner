@@ -84,7 +84,7 @@ body {
 }
 
 .wrapper .form-wrapper.sign-up {
-    transform: rotate(7deg);
+    transform: rotate(0deg);
 }
 
 .wrapper.animate-signIn .form-wrapper.sign-up {
@@ -303,17 +303,17 @@ if (isset($_POST['reset'])) {
     <div class="wrapper">
         <div class="form-wrapper sign-up">
         <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-                <h2>Forgot Password</h2>
+                <h2>Reset Password</h2>
                 <div class="input-group">
-                    <input type="email"  name="emailid" placeholder="Email id" required>
+                    <input type="email"  name="emailid"  required>
                     <label for="">Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" name="PassWord" placeholder=" New Password" required>
+                    <input type="password" name="PassWord"  required>
                     <label for="">New Password</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" name="CpassWord" placeholder="Retype new Password " required>
+                    <input type="password" name="CpassWord" required>
                     <label for="">Retype New Password</label>
                 </div>
                 <button type="submit" name="reset" class="btn">Reset Now</button>

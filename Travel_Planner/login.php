@@ -382,20 +382,20 @@ use PHPmailer\PHPmailer\Exception;
                 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                     <h2>Sign Up</h2>
                     <div class="input-group">
-                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="text" name="username"  required>
                         <label for="">Username</label>
                     </div>
                     <div class="input-group">
-                        <input type="email" name="emailid" placeholder="Email id" required>
+                        <input type="email" name="emailid"  required>
                         <label for="">Email</label>
                     </div>
                     <div class="input-group">
-                        <input type="password" name="PassWord" placeholder="Password" required>
+                        <input type="password" name="PassWord" required>
                         <label for="">Password</label>
                     </div>
 
                     <div class="input-group">
-                        <input type="password" name="CpassWord" placeholder="Confirm Password " required>
+                        <input type="password" name="CpassWord" required>
                         <label for=""> Confirm Password</label>
                     </div>
 
@@ -410,11 +410,11 @@ use PHPmailer\PHPmailer\Exception;
                 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                     <h2>Login</h2>
                     <div class="input-group">
-                        <input type="email" name="emailid" placeholder="Email ID" required>
+                        <input type="email" name="emailid" autofocus required>
                         <label for="">Email</label>
                     </div>
                     <div class="input-group">
-                        <input type="password" name="PassWord" placeholder="Password">
+                        <input type="password" name="PassWord">
                         <label for="">Password</label>
                     </div>
                     <div class="forgot-pass">
