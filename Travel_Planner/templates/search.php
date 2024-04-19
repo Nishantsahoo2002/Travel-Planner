@@ -86,7 +86,7 @@
         </div>
         <div class="col-lg-4 text-center text-lg-end">
           <div class="d-inline-flex align-items-center" style="height: 45px">
-            <a href="loginnew.html"
+            <!--a href="loginnew.html"
               ><small class="me-3 text-light"
                 ><i class="fa fa-user me-2"></i>Register</small
               ></a
@@ -95,7 +95,7 @@
               ><small class="me-3 text-light"
                 ><i class="fa fa-sign-in-alt me-2"></i>Login</small
               ></a
-            >
+            -->
             <div class="dropdown">
               <a
                 href="#"
