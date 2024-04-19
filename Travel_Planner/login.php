@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "connectdb.php";
+require "validate.php";
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -255,8 +256,8 @@ if (isset($_POST['login'])) {
     $query = mysqli_query($conn, $emailquery);
     $emailcount = mysqli_num_rows($query);
     $row = $query->fetch_assoc();
+    $_SESSION['username']= $row['username'];
     if ($emailcount > 0 && password_verify($password,$row["passwrd"])) {
-        $_SESSION['username']= $row['username'];
         header('Location: index.php');
     }else{?>
         <script>
@@ -282,15 +283,15 @@ if (isset($_POST['register'])) {
         </script>
         <?php
     } else {
-        if (password_verify($cpassword,$pass) == true) {
+        if ((password_verify($cpassword,$pass) == true) && (ValidateMail($email) == true)) {
             $insertquery = "insert into userids( username, email, passwrd) values('$username ','$email','$pass')";
             $iquery = mysqli_query($conn, $insertquery);
             if ($iquery) { ?>
                 <script>
-                    alert("Insert Successful");
+                    alert("Registration Successful");
                 </script>
                 <?php
-                // header('Location: http://192.168.11.17/tpp/?');
+                // header('Location:');
                 // $conn->close();
             } else { ?>
                 <script>
