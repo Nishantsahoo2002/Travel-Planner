@@ -94,7 +94,7 @@ if(!isset($_SESSION['username'])){
         </div>
         <div class="col-lg-4 text-center text-lg-end">
           <div class="d-inline-flex align-items-center" style="height: 45px">
-            <a href="login.php"
+            <!-- <a href="login.php"
               ><small class="me-3 text-light"
                 ><i class="fa fa-user me-2"></i>Register</small
               ></a
@@ -103,7 +103,7 @@ if(!isset($_SESSION['username'])){
               ><small class="me-3 text-light"
                 ><i class="fa fa-sign-in-alt me-2"></i>Login</small
               ></a
-            >
+            > -->
             <div class="dropdown">
               <a
                 href="#"
@@ -217,13 +217,13 @@ if(!isset($_SESSION['username'])){
                     The biggest adventure you can ever take is to live the life
                     of your dreams
                   </p>
-                  <div class="d-flex align-items-center justify-content-center">
+                  <!-- <div class="d-flex align-items-center justify-content-center">
                     <a
                       class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
                       href="login.php"
                       >Login</a
                     >
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
