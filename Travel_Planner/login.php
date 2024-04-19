@@ -283,12 +283,13 @@ if (isset($_POST['register'])) {
         </script>
         <?php
     } else {
-        if (ValidateMail($email) == true) {
+        if (ValidateMail($email) == "valid") {
             if (password_verify($password,$pass)){
                 $insertquery = "insert into userids( username, email, passwrd) values('$username ','$email','$pass')";
                 $iquery = mysqli_query($conn, $insertquery);
                 if ($iquery) { ?>
                     <script>
+                        window.location.href = 'index.html';
                         alert("Registration Successful");
                     </script>
                     <?php
@@ -308,6 +309,7 @@ if (isset($_POST['register'])) {
             }
         } else {?>
             <script>
+                window.location.href = 'index.html';
                 alert("Invalid Email !!");
             </script>
             <?php

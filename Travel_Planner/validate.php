@@ -106,21 +106,26 @@ function ValidateMail($recipient)
 
         if (checkMXRecords($recipient)) {
             if (validateEmailWithSMTP($recipient)) {
-                return true;
+                return "valid";
                 // echo "Email address is valid.";
             } else {
-                return false;
+                return "invalid";
                 // echo "Email address is invalid.";
             }
         } else {
-            return false;
+            return "invalid";
             // echo "$recipient has a invalid domain\n";
         }
     } else {
-        return false;
+        return "invalid";
         // echo "$recipient is not a valid email address\n";
     }
 }
 
-// $res = ValidateMail("shishirkumar197@gmail.com");
-// echo "$res out";
+// $res = ValidateMail("shishirkumar197u9i@gmail.com");
+// if ($res){
+//     echo "valid";
+// }
+// else{
+//     echo "invalid";
+// }
