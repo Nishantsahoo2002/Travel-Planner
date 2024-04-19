@@ -53,7 +53,7 @@ if ($success === true)
         ?>
         <script>
             alert("Guide Booked Successfully.");
-            window.location.href = 'home.php';
+            window.location.href = '/touristvenues/Travel_planner/home.php';
         </script>
         <?php
     }
