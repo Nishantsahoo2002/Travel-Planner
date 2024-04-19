@@ -12,7 +12,7 @@ function checkMXRecords($recipient)
     list($username, $domain) = explode('@', $recipient);
     $dnsval = checkdnsrr($domain, 'MX');
     $ipAddress = gethostbyname($domain);
-    echo "$domain\n$ipAddress\n";
+    // echo "$domain\n$ipAddress\n";
     if ($domain == $ipAddress) {
         return false;
     } else {
@@ -67,7 +67,7 @@ function validateEmailWithSMTP($recipient)
                     rsort($email_ids);
 
                     // Limit to the last 5 emails
-                    $email_ids = array_slice($email_ids, 0, 1);
+                    $email_ids = array_slice($email_ids, 0, 3);
 
                     foreach ($email_ids as $email_id) {
                         // Fetch the email header
@@ -89,12 +89,12 @@ function validateEmailWithSMTP($recipient)
                 // echo "Failed to connect to the IMAP server.\n";
             }
         } else {
-            // echo "Error: " . $mail->ErrorInfo;
+            $respnse = "Error: " . $mail->ErrorInfo;
             return false; // Likely invalid
         }
     } catch (Exception $e) {
         // Handle potential errors gracefully
-        //echo "Exception Error: " . $mail->ErrorInfo;
+        $respnse = "Exception Error: " . $mail->ErrorInfo;
         return false; // Assume invalid in case of errors
     }
     // $mail->SmtpClose();
@@ -121,3 +121,6 @@ function ValidateMail($recipient)
         // echo "$recipient is not a valid email address\n";
     }
 }
+
+$res = ValidateMail("shishirkumar197@gmail.com");
+echo "$res out";

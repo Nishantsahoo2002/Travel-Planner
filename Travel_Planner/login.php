@@ -311,12 +311,10 @@ if (isset($_POST['register'])) {
                 alert("Invalid Email !!");
             </script>
             <?php
-            header('Location: login.php');
         }
     }
 }
 ?>
-
     <div class="wrapper">
         <div class="form-wrapper sign-up">
             <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
@@ -335,7 +333,7 @@ if (isset($_POST['register'])) {
                 </div>
 
                 <div class="input-group">
-                    <input type="confirm password" name="CpassWord" placeholder="Confirm Password " required>
+                    <input type="password" name="CpassWord" placeholder="Confirm Password " required>
                     <label for=""> Confirm Password</label>
                 </div>
                 
