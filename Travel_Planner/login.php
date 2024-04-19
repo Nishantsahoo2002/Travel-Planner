@@ -218,19 +218,6 @@ h2 {
 }
 </style>
 
-<!-- preloader section start -->
-
-<style>
-    #loading {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      background: #ffffff url(" ./img/loader.gif")
-        no-repeat center;
-      z-index: 99999;
-    }
-  </style>
-  <!-- preloader section end -->
 
 
 <body>
@@ -246,7 +233,7 @@ h2 {
 </head>
 
 <body>
-    <!-- <div id="loading"></div>  -->
+   
     <?php
 if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($conn, $_POST['emailid']);
@@ -391,12 +378,7 @@ signInLink.addEventListener('click', () => {
 
     <script src="script.js"></script>
 <!-- preloader section start -->
-    <script>
-        var preloader = document.getElementById("loading");
-        setTimeout(function () {
-          preloader.style.display = "none";
-        }, 0000); // 3000 milliseconds = 3 seconds
-      </script>
+    
       <!-- preloader section End -->
 </body>
 
