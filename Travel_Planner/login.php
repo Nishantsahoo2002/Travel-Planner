@@ -1,3 +1,4 @@
+<?php require "connectdb.php";?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -308,24 +309,24 @@ if (isset($_POST['register'])) {
             <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                 <h2>Sign Up</h2>
                 <div class="input-group">
-                    <input type="text" required>
+                    <input type="text" name="username" placeholder="Username" required>
                     <label for="">Username</label>
                 </div>
                 <div class="input-group">
-                    <input type="email" required>
+                    <input type="email"  name="emailid" placeholder="Email id" required>
                     <label for="">Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="confirm password" required>
+                    <input type="password" name="PassWord" placeholder="Password" required>
                     <label for="">Password</label>
                 </div>
 
                 <div class="input-group">
-                    <input type="password" required>
+                    <input type="confirm password" name="CpassWord" placeholder="Confirm Password " required>
                     <label for=""> Confirm Password</label>
                 </div>
                 
-                <button type="submit" class="btn">Sign Up</button>
+                <button type="submit" name="register" class="btn">Sign Up</button>
                 <div class="sign-link">
                     <p>Existing user? <a href="#" class="signIn-link">Sign In</a></p>
                 </div>
@@ -333,20 +334,20 @@ if (isset($_POST['register'])) {
         </div>
 
         <div class="form-wrapper sign-in">
-            <form action="">
+            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                 <h2>Login</h2>
                 <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Username</label>
+                    <input type="email" name="emailid" placeholder="Email ID" required>
+                    <label for="">Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" required>
+                    <input type="password" name="PassWord" placeholder="Password" required>
                     <label for="">Password</label>
                 </div>
                 <div class="forgot-pass">
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" name="login" class="btn">Login</button>
                 <div class="sign-link">
                     <p>New User? <a href="#" class="signUp-link">Sign Up</a></p>
                 </div>
