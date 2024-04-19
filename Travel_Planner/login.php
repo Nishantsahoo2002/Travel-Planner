@@ -252,13 +252,17 @@ if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($conn, $_POST['emailid']);
     $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
     $pass = password_hash($password, PASSWORD_DEFAULT);
-    $emailquery = "select passwrd from userids where email='$email'";
+    $emailquery = "select username,passwrd from userids where email='$email'";
     $query = mysqli_query($conn, $emailquery);
     $emailcount = mysqli_num_rows($query);
-    $row = $query->fetch_assoc();
+    // $row = $query->fetch_assoc();
+    $row = mysqli_fetch_assoc($query);
     $_SESSION['username']= $row['username'];
-    if ($emailcount > 0 && password_verify($password,$row["passwrd"])) {
-        header('Location: index.php');
+    if ($emailcount > 0 && password_verify($password,$row["passwrd"])) {?>
+        <script>
+            location.replace("home.php");
+        </script>
+    <?php 
     }else{?>
         <script>
             alert("Invalid Login ID or Password!");
