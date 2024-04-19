@@ -250,11 +250,11 @@ if(!isset($_SESSION['username'])){
                     for every traveler.
                   </p>
                   <div class="d-flex align-items-center justify-content-center">
-                    <a
+                    <!-- <a
                       class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
                       href="login.php"
                       >Login</a
-                    >
+                    > -->
                   </div>
                 </div>
               </div>
@@ -277,11 +277,11 @@ if(!isset($_SESSION['username'])){
                     of your dreams
                   </p>
                   <div class="d-flex align-items-center justify-content-center">
-                    <a
+                    <!-- <a
                       class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
                       href="login.php"
                       >Login</a
-                    >
+                    > -->
                   </div>
                 </div>
               </div>
