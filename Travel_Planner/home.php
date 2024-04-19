@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header('Location: index.html');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -88,7 +94,7 @@
         </div>
         <div class="col-lg-4 text-center text-lg-end">
           <div class="d-inline-flex align-items-center" style="height: 45px">
-            <a href="login.php"
+            <!-- <a href="login.php"
               ><small class="me-3 text-light"
                 ><i class="fa fa-user me-2"></i>Register</small
               ></a
@@ -97,7 +103,7 @@
               ><small class="me-3 text-light"
                 ><i class="fa fa-sign-in-alt me-2"></i>Login</small
               ></a
-            >
+            > -->
             <div class="dropdown">
               <a
                 href="#"
@@ -118,7 +124,7 @@
                 <a href="#" class="dropdown-item"
                   ><i class="fas fa-cog me-2"></i> Account Settings</a
                 > -->
-                <a href="#" class="dropdown-item"
+                <a href="logout.php" class="dropdown-item"
                   ><i class="fas fa-power-off me-2"></i> Log Out</a
                 >
               </div>
@@ -202,7 +208,7 @@
                     class="text-white text-uppercase fw-bold mb-4"
                     style="letter-spacing: 3px"
                   >
-                    Explore Odisha With Us
+                    Explore Odisha With Us<?php echo $_SESSION['username']; ?>
                   </h4>
                   <h1 class="display-2 text-capitalize text-white mb-4">
                     Let's Visit Odisha Together!
@@ -211,13 +217,13 @@
                     The biggest adventure you can ever take is to live the life
                     of your dreams
                   </p>
-                  <div class="d-flex align-items-center justify-content-center">
+                  <!-- <div class="d-flex align-items-center justify-content-center">
                     <a
                       class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
                       href="login.php"
                       >Login</a
                     >
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
