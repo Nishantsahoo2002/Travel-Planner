@@ -40,7 +40,7 @@ def process_data():
         else:
              return render_template("search.php",place_1_id="template",place_2_id="template",place_3_id="template",place_4_id="template",place_5_id="template",place_6_id="template",place_7_id="template",place_8_id="template",place_9_id="template")
     else:
-        return render_template("search.php")
+        return render_template("search.php",place_1_id="template",place_2_id="template",place_3_id="template",place_4_id="template",place_5_id="template",place_6_id="template",place_7_id="template",place_8_id="template",place_9_id="template")
     # Handle case where no input is provided (optional)
     
 
