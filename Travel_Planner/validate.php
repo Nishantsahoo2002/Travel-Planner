@@ -122,5 +122,5 @@ function ValidateMail($recipient)
     }
 }
 
-$res = ValidateMail("shishirkumar197@gmail.com");
-echo "$res out";
+// $res = ValidateMail("shishirkumar197@gmail.com");
+// echo "$res out";
