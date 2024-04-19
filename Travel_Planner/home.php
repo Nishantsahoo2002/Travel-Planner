@@ -169,7 +169,7 @@ if(!isset($_SESSION['username'])){
               <div class="dropdown-menu m-0">
                 <!-- <a href="destination.html" class="dropdown-item">Destination</a> -->
                 <a href="tour.html" class="dropdown-item">Explore Tour</a>
-                <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                <a href="booking.php" class="dropdown-item">Travel Booking</a>
                 <!-- <a href="gallery.html" class="dropdown-item">Our Gallery</a> -->
                 <a href="guides.html" class="dropdown-item">Travel Guides</a>
                 <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
@@ -180,7 +180,7 @@ if(!isset($_SESSION['username'])){
             <a href="contact.html" class="nav-item nav-link">Contact</a>
           </div>
           <a
-            href="booking.html"
+            href="booking.php"
             class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4"
             >Book Now</a
           >
@@ -3510,7 +3510,7 @@ if(!isset($_SESSION['username'])){
                   <a
                  
                     class="btn btn-square btn-primary rounded-circle mx-1"
-                    href="booking.html"
+                    href="booking.php"
                     ><i class="">P.P.</i
                   ></a>
                 </div>
@@ -3552,7 +3552,7 @@ if(!isset($_SESSION['username'])){
                   <a
                   
                     class="btn btn-square btn-primary rounded-circle mx-1"
-                    href="booking.html"
+                    href="booking.php"
                     ><i class="">D.S.</i
                   ></a>
                 </div>
@@ -3599,7 +3599,7 @@ if(!isset($_SESSION['username'])){
                   ></a>
                   <a
                     class="btn btn-square btn-primary rounded-circle mx-1"
-                    href="booking.html"
+                    href="booking.php"
                     ><i class="">P.S.</i
                   ></a>
                 </div>
@@ -3646,7 +3646,7 @@ if(!isset($_SESSION['username'])){
                   ></a>
                   <a
                     class="btn btn-square btn-primary rounded-circle mx-1"
-                    href="booking.html"
+                    href="booking.php"
                     ><i class="">N.B.</i
                   ></a>
                 </div>
@@ -3931,7 +3931,7 @@ if(!isset($_SESSION['username'])){
               <a href="tour.html"
                 ><i class="fas fa-angle-right me-2"></i> Explore Tour</a
               >
-              <a href="booking.html"
+              <a href="booking.php"
                 ><i class="fas fa-angle-right me-2"></i> Book a Tour</a
               >
               <a href="guides.html"
