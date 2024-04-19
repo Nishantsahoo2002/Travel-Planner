@@ -1,4 +1,7 @@
-<?php require "connectdb.php";?>
+<?php
+session_start();
+require "connectdb.php";
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -253,7 +256,8 @@ if (isset($_POST['login'])) {
     $emailcount = mysqli_num_rows($query);
     $row = $query->fetch_assoc();
     if ($emailcount > 0 && password_verify($password,$row["passwrd"])) {
-        header('Location: index.html');
+        $_SESSION['username']= $row['username'];
+        header('Location: index.php');
     }else{?>
         <script>
             alert("Invalid Login ID or Password!");
@@ -274,7 +278,7 @@ if (isset($_POST['register'])) {
 
     if ($emailcount > 0) { ?>
         <script>
-            alert("email already exists");
+            alert("email already exists! Please Sign in");
         </script>
         <?php
     } else {

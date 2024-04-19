@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header('Location: index.html');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -202,7 +208,7 @@
                     class="text-white text-uppercase fw-bold mb-4"
                     style="letter-spacing: 3px"
                   >
-                    Explore Odisha With Us
+                    Explore Odisha With Us<?php echo $_SESSION['username']; ?>
                   </h4>
                   <h1 class="display-2 text-capitalize text-white mb-4">
                     Let's Visit Odisha Together!
