@@ -1,8 +1,11 @@
 from flask import Flask, request, render_template
 import pickle
+import numpy as np
+import pandas as pd
 
 placesdata = pickle.load(open('C:\\xampp\\htdocs\\touristvenues\\Travel_Planner\\places_dict.pkl','rb'))
 similarity = pickle.load(open('C:\\xampp\htdocs\\touristvenues\\Travel_Planner\\similarity.pkl','rb'))
+places = pd.read_csv('C:\\xampp\\htdocs\\touristvenues\\Travel_Planner\\dataset.csv', encoding='windows-1252')
 
 def recommend(place):
     try:

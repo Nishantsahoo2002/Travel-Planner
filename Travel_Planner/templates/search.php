@@ -241,7 +241,7 @@
                         <h5 id="place_1_name" class="text-white text-uppercase mb-2">
                          {{place_1_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_1}}&parameter2={{place_name_1}}&parameter3={{description_1}}&parameter4={{latitude_1}}&parameter5={{longitude_1}}&parameter6={{area_1}}&parameter7={{city_1}}&parameter8={{district_1}}&parameter9={{state_1}}&parameter10={{country_1}}&parameter11={{pincode_1}}&parameter12={{category_1}}&parameter13={{visit_time_1}}&parameter14={{rating_1}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
@@ -266,7 +266,7 @@
                         <h5 class="text-white text-uppercase mb-2">
                           {{place_2_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_2}}&parameter2={{place_name_2}}&parameter3={{description_2}}&parameter4={{latitude_2}}&parameter5={{longitude_2}}&parameter6={{area_2}}&parameter7={{city_2}}&parameter8={{district_2}}&parameter9={{state_2}}&parameter10={{country_2}}&parameter11={{pincode_2}}&parameter12={{category_2}}&parameter13={{visit_time_2}}&parameter14={{rating_2}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
@@ -291,7 +291,7 @@
                         <h5 class="text-white text-uppercase mb-2">
                           {{place_3_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_3}}&parameter2={{place_name_3}}&parameter3={{description_3}}&parameter4={{latitude_3}}&parameter5={{longitude_3}}&parameter6={{area_3}}&parameter7={{city_3}}&parameter8={{district_3}}&parameter9={{state_3}}&parameter10={{country_3}}&parameter11={{pincode_3}}&parameter12={{category_3}}&parameter13={{visit_time_3}}&parameter14={{rating_3}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
@@ -317,7 +317,7 @@
                         <h5 class="text-white text-uppercase mb-2">
                           {{place_4_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_4}}&parameter2={{place_name_4}}&parameter3={{description_4}}&parameter4={{latitude_4}}&parameter5={{longitude_4}}&parameter6={{area_4}}&parameter7={{city_4}}&parameter8={{district_4}}&parameter9={{state_4}}&parameter10={{country_4}}&parameter11={{pincode_4}}&parameter12={{category_4}}&parameter13={{visit_time_4}}&parameter14={{rating_4}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
@@ -342,7 +342,7 @@
                         <h5 class="text-white text-uppercase mb-2">
                           {{place_5_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_5}}&parameter2={{place_name_5}}&parameter3={{description_5}}&parameter4={{latitude_5}}&parameter5={{longitude_5}}&parameter6={{area_5}}&parameter7={{city_5}}&parameter8={{district_5}}&parameter9={{state_5}}&parameter10={{country_5}}&parameter11={{pincode_5}}&parameter12={{category_5}}&parameter13={{visit_time_5}}&parameter14={{rating_5}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
@@ -368,7 +368,7 @@
                         <h5 class="text-white text-uppercase mb-2">
                           {{place_6_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_6}}&parameter2={{place_name_6}}&parameter3={{description_6}}&parameter4={{latitude_6}}&parameter5={{longitude_6}}&parameter6={{area_6}}&parameter7={{city_6}}&parameter8={{district_6}}&parameter9={{state_6}}&parameter10={{country_6}}&parameter11={{pincode_6}}&parameter12={{category_6}}&parameter13={{visit_time_6}}&parameter14={{rating_6}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
@@ -393,7 +393,7 @@
                         <h5 class="text-white text-uppercase mb-2">
                           {{place_7_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_7}}&parameter2={{place_name_7}}&parameter3={{description_7}}&parameter4={{latitude_7}}&parameter5={{longitude_7}}&parameter6={{area_7}}&parameter7={{city_7}}&parameter8={{district_7}}&parameter9={{state_7}}&parameter10={{country_7}}&parameter11={{pincode_7}}&parameter12={{category_7}}&parameter13={{visit_time_7}}&parameter14={{rating_7}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
@@ -418,7 +418,7 @@
                         <h5 class="text-white text-uppercase mb-2">
                           {{place_8_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_8}}&parameter2={{place_name_8}}&parameter3={{description_8}}&parameter4={{latitude_8}}&parameter5={{longitude_8}}&parameter6={{area_8}}&parameter7={{city_8}}&parameter8={{district_8}}&parameter9={{state_8}}&parameter10={{country_8}}&parameter11={{pincode_8}}&parameter12={{category_8}}&parameter13={{visit_time_8}}&parameter14={{rating_8}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
@@ -443,7 +443,7 @@
                         <h5 class="text-white text-uppercase mb-2">
                           {{place_9_name}}
                         </h5>
-                        <a href="#" class="btn-hover text-white"
+                        <a href="info.php?parameter1={{place_id_9}}&parameter2={{place_name_9}}&parameter3={{description_9}}&parameter4={{latitude_9}}&parameter5={{longitude_9}}&parameter6={{area_9}}&parameter7={{city_9}}&parameter8={{district_9}}&parameter9={{state_9}}&parameter10={{country_9}}&parameter11={{pincode_9}}&parameter12={{category_9}}&parameter13={{visit_time_9}}&parameter14={{rating_9}}" class="btn-hover text-white"
                           >Read more <i class="fa fa-arrow-right ms-2"></i
                         ></a>
                       </div>
