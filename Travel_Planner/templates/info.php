@@ -1000,8 +1000,8 @@
    =========================== */
 
     @media only screen and (min-width: 150px) and (max-width: 780px) {
-       {
-      }
+      
+      
       .search {
         width: 95%;
         margin: 0 auto;
@@ -1078,22 +1078,18 @@
       </div>
       <!-- -------- Main Content ----------  -->
       <div class="main-content">
-        <div class="search">
+        <!-- <div class="search">
           <form class="search-form">
             <input type="text" placeholder="Search" />
             <input type="submit" value="Submit" />
           </form>
-        </div>
+        </div> -->
 
         <div class="post">
           <div class="post-author"></div>
           <img src="OD-Images/sanjana.jpg" width="100%" />
-          <h3 id="place">Place Name</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea,
-            reiciendis esse ratione laboriosam provident vero. Nostrum sapiente,
-            facere commodi eaque asperiores minima hic incidunt vero error nam.
-            Ipsa, pariatur optio?
+          <h3 id="place_name">Place Name</h3>
+          <p id="description">
           </p>
           <p id="longitude">Longitude:</p>
           <p id="latitude">Latitude:</p>
