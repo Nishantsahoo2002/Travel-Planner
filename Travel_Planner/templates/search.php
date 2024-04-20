@@ -170,7 +170,7 @@
               <div class="dropdown-menu m-0">
                 <!-- <a href="destination.html" class="dropdown-item">Destination</a> -->
                 <a href="http://127.0.0.1/touristvenues/Travel_Planner/tour.html" class="dropdown-item">Explore Tour</a>
-                <a href="http://127.0.0.1/touristvenues/Travel_Planner/booking.html" class="dropdown-item">Travel Booking</a>
+                <a href="http://127.0.0.1/touristvenues/Travel_Planner/booking.php" class="dropdown-item">Travel Booking</a>
                 <!-- <a href="gallery.html" class="dropdown-item">Our Gallery</a> -->
                 <a href="http://127.0.0.1/touristvenues/Travel_Planner/guides.html" class="dropdown-item">Travel Guides</a>
                 <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
@@ -180,7 +180,7 @@
             <a href="http://127.0.0.1/touristvenues/Travel_Planner/gallery.html" class="nav-item nav-link">Gallery</a>
             <a href="http://127.0.0.1/touristvenues/Travel_Planner/contact.html" class="nav-item nav-link">Contact</a>
           </div>
-          <a href="http://127.0.0.1/touristvenues/Travel_Planner/booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4"
+          <a href="http://127.0.0.1/touristvenues/Travel_Planner/booking.php" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4"
             >Book Now</a
           >
         </div>
@@ -516,7 +516,7 @@
               <a href="http://127.0.0.1/touristvenues/Travel_Planner/index.html"><i class="fas fa-angle-right me-2"></i> Home</a>
               <a href="http://127.0.0.1/touristvenues/Travel_Planner/about.html"><i class="fas fa-angle-right me-2"></i> About</a>
               <a href="http://127.0.0.1/touristvenues/Travel_Planner/tour.html"><i class="fas fa-angle-right me-2"></i> Explore Tour</a>
-              <a href="http://127.0.0.1/touristvenues/Travel_Planner/booking.html"><i class="fas fa-angle-right me-2"></i> Book a Tour</a>
+              <a href="http://127.0.0.1/touristvenues/Travel_Planner/booking.php"><i class="fas fa-angle-right me-2"></i> Book a Tour</a>
               <a href="http://127.0.0.1/touristvenues/Travel_Planner/guides.html"><i class="fas fa-angle-right me-2"></i> Book a Guide</a>
               <a href="http://127.0.0.1/touristvenues/Travel_Planner/gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
             </div>
