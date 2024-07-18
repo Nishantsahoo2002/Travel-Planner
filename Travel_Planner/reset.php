@@ -4,79 +4,8 @@
 require_once 'connectdb.php'; // Configuration file with database credentials
 require_once 'validate.php';  // Class or function for sending emails
 
-// Function to generate a random reset token
-function generateRandomToken($length) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, strlen($characters) - 1)];
-    }
-    return $randomString;
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $email = trim($_POST['emailid']);
-
-    // Validate email address (add your own validation logic)
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-        // Connect to database
-        // $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        // Query to check if email exists
-        $sql = "SELECT * FROM userids WHERE email = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows === 1) {
-
-            $user_id = $result->fetch_assoc()["id"];
-
-            // Generate a random reset token
-            $reset_token = generateRandomToken(32);
-
-            // Update user table with reset token and expiry time
-            $sql = "UPDATE users SET reset_token = ?, reset_token_expiry = DATE_ADD(NOW(), INTERVAL 1 HOUR) WHERE id = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ss", $reset_token, $user_id);
-            $stmt->execute();
-
-            // Create a reset link (replace with your domain)
-            $reset_link = "http://127.0.0.1:80/touristvenues/Travel_Planner/reset.php?token=" . $reset_token;
-
-            // Prepare email content
-            $subject = "Reset Password for Your Account";
-            $body = "Click on the following link to reset your password:\n" . $reset_link;
-
-            // Send email using your preferred method (replace with your mailer function)
-            send_email($email, $subject, $body);
-
-            $message = "A password reset link has been sent to your email address.";
-        } else {
-            $message = "The email address is not registered.";
-        }
-
-        $conn->close();
-    } else {
-        $message = "Invalid email address.";
-    }
-}
-
 ?>
-
-<?php
-session_start();
-require "connectdb.php";
-require "validate.php";
-?>
+      
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -155,7 +84,7 @@ body {
 }
 
 .wrapper .form-wrapper.sign-up {
-    transform: rotate(7deg);
+    transform: rotate(0deg);
 }
 
 .wrapper.animate-signIn .form-wrapper.sign-up {
@@ -320,55 +249,31 @@ h2 {
 </head>
 
 <body>
-    <!-- <div id="loading"></div>  -->
     <?php
-if (isset($_POST['login'])) {
-    $email = mysqli_real_escape_string($conn, $_POST['emailid']);
-    $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
-    $pass = password_hash($password, PASSWORD_DEFAULT);
-    $emailquery = "select username,passwrd from userids where email='$email'";
-    $query = mysqli_query($conn, $emailquery);
-    $emailcount = mysqli_num_rows($query);
-    // $row = $query->fetch_assoc();
-    $row = mysqli_fetch_assoc($query);
-    $_SESSION['username']= $row['username'];
-    if ($emailcount > 0 && password_verify($password,$row["passwrd"])) {?>
-        <script>
-            location.replace("home.php");
-        </script>
-    <?php 
-    }else{?>
-        <script>
-            alert("Invalid Login ID or Password!");
-        </script>
-    <?php 
-    }
-}
-if (isset($_POST['register'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
+if (isset($_POST['reset'])) {
     $email = mysqli_real_escape_string($conn, $_POST['emailid']);
     $password = mysqli_real_escape_string($conn, $_POST['PassWord']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['CpassWord']);
     $pass = password_hash($password, PASSWORD_BCRYPT);
-    // $cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
     $emailquery = "select * from userids where email='$email' ";
     $query = mysqli_query($conn, $emailquery);
     $emailcount = mysqli_num_rows($query);
 
-    if ($emailcount > 0) { ?>
+    if (!($emailcount > 0)) { ?>
         <script>
-            alert("email already exists! Please Sign in");
+            alert("email record not found!!");
         </script>
         <?php
     } else {
-        if (ValidateMail($email) == "valid") {
+        $row = mysqli_fetch_assoc($query);
+        if ($email === $row['email']) {
             if (password_verify($password,$pass)){
-                $insertquery = "insert into userids( username, email, passwrd) values('$username ','$email','$pass')";
-                $iquery = mysqli_query($conn, $insertquery);
+                $updatequery = "update userids set passwrd='$pass' where email='$email'";
+                $iquery = mysqli_query($conn, $updatequery);
                 if ($iquery) { ?>
                     <script>
                         window.location.href = 'index.html';
-                        alert("Registration Successful");
+                        alert("Password reset successful.");
                     </script>
                     <?php
                     // header('Location:');
@@ -388,7 +293,7 @@ if (isset($_POST['register'])) {
         } else {?>
             <script>
                 window.location.href = 'index.html';
-                alert("Invalid Email !!");
+                alert("Email record not found!!");
             </script>
             <?php
         }
@@ -397,51 +302,24 @@ if (isset($_POST['register'])) {
 ?>
     <div class="wrapper">
         <div class="form-wrapper sign-up">
-            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-                <h2>Sign Up</h2>
+        <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+                <h2>Reset Password</h2>
                 <div class="input-group">
-                    <input type="text" name="username" placeholder="Username" required>
-                    <label for="">Username</label>
-                </div>
-                <div class="input-group">
-                    <input type="email"  name="emailid" placeholder="Email id" required>
+                    <input type="email"  name="emailid"  required>
                     <label for="">Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" name="PassWord" placeholder="Password" required>
-                    <label for="">Password</label>
+                    <input type="password" name="PassWord"  required>
+                    <label for="">New Password</label>
                 </div>
-
                 <div class="input-group">
-                    <input type="password" name="CpassWord" placeholder="Confirm Password " required>
-                    <label for=""> Confirm Password</label>
+                    <input type="password" name="CpassWord" required>
+                    <label for="">Retype New Password</label>
                 </div>
-                
-                <button type="submit" name="register" class="btn">Sign Up</button>
-                <div class="sign-link">
+                <button type="submit" name="reset" class="btn">Reset Now</button>
+                <!-- <div class="sign-link">
                     <p>Existing user? <a href="#" class="signIn-link">Sign In</a></p>
-                </div>
-            </form>
-        </div>
-
-        <div class="form-wrapper sign-in">
-            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-                <h2>Login</h2>
-                <div class="input-group">
-                    <input type="email" name="emailid" placeholder="Email ID" required>
-                    <label for="">Email</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" name="PassWord" placeholder="Password" required>
-                    <label for="">Password</label>
-                </div>
-                <div class="forgot-pass">
-                    <a href="#">Forgot Password?</a>
-                </div>
-                <button type="submit" name="login" class="btn">Login</button>
-                <div class="sign-link">
-                    <p>New User? <a href="#" class="signUp-link">Sign Up</a></p>
-                </div>
+                </div> -->
             </form>
         </div>
     </div>
@@ -479,4 +357,3 @@ signInLink.addEventListener('click', () => {
 
 </body>
 </html>
-

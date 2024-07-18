@@ -60,9 +60,9 @@
                         <a href="#" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
                         <div class="dropdown-menu rounded">
                             <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
-                            <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
+                            <!-- <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
                             <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>
-                            <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a> -->
                             <a href="#" class="dropdown-item"><i class="fas fa-power-off me-2"></i> Log Out</a>
                         </div>
                     </div>
@@ -154,12 +154,13 @@
                   Get <span class="text-warning">50% Off</span> On Your First
                   Adventure Trip With Us. Get More Deal Offers Here.
                 </p>
-                <form action="pay.php" method="post">
+                <form action="http://127.0.0.1/touristvenues/payment/pay.php" method="post">
                   <div class="row g-3">
                     <div class="col-md-6">
                       <div class="form-floating">
                         <input
                           type="text"
+                          name="customername"
                           class="form-control bg-white border-0"
                           id="name"
                           placeholder="name" 
@@ -183,7 +184,7 @@
                     </div> -->
                     <div class="col-md-6">
                       <div class="form-floating" >
-                        <select class="form-select bg-white border-0" id="select1" required >
+                        <select class="form-select bg-white border-0" id="select1" name="destination" required >
                           <option value="0">Choose a Destination</option>
                           <option value="1">SAILA SRIKHETRA</option>
                           <option value="2">TIKARPADA WILDLIFE SANCTUARY</option>
@@ -351,6 +352,7 @@
                           type="date"
                           class="form-control bg-white border-0"
                           id="From Date"
+                          name="startdate"
                           placeholder="From date"
                           data-target="#date3"
                           data-toggle="datetimepicker"
@@ -370,6 +372,7 @@
                           type="date"
                           class="form-control bg-white border-0"
                           id="datetime"
+                          name="enddate"
                           placeholder="Date & Time"
                           data-target="#date3"
                           data-toggle="datetimepicker"
@@ -380,7 +383,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-floating" >
-                        <select class="form-select bg-white border-0" id="select1" required >
+                        <select class="form-select bg-white border-0" id="select1" name="guide" required >
                           <option value="0">Choose Your Guide</option>
                           <option value="1">Rajendra Sahoo-Balangir
                           </option>
@@ -572,6 +575,7 @@
                           type="price"
                           class="form-control bg-white border-0"
                           id="price"
+                          name="price"
                           placeholder="price" value="200"
                         />
                         <label for="email">Price</label>
@@ -583,6 +587,7 @@
                           class="form-control bg-white border-0"
                           placeholder="Special Request"
                           id="message"
+                          name="message"
                           style="height: 100px"
                         ></textarea>
                         <label for="message">Special Request</label>

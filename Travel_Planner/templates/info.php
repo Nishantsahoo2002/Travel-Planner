@@ -1,3 +1,19 @@
+<?php
+$param1=$_GET["parameter1"]; 
+$param2=$_GET["parameter2"]; 
+$param3=$_GET["parameter3"]; 
+$param4=$_GET["parameter4"]; 
+$param5=$_GET["parameter5"]; 
+$param6=$_GET["parameter6"]; 
+$param7=$_GET["parameter7"]; 
+$param8=$_GET["parameter8"]; 
+$param9=$_GET["parameter9"]; 
+$param10=$_GET["parameter10"]; 
+$param11=$_GET["parameter11"]; 
+$param12=$_GET["parameter12"]; 
+$param13=$_GET["parameter13"]; 
+$param14=$_GET["parameter14"]; 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -1000,8 +1016,8 @@
    =========================== */
 
     @media only screen and (min-width: 150px) and (max-width: 780px) {
-       {
-      }
+      
+      
       .search {
         width: 95%;
         margin: 0 auto;
@@ -1025,7 +1041,7 @@
           </li>
 
           <li>
-            <a href="booking.html" class="active-link"
+            <a href="booking.php" class="active-link"
               ><img src="./OD-Images/profit-growth.png"
             /></a>
           </li>
@@ -1078,33 +1094,29 @@
       </div>
       <!-- -------- Main Content ----------  -->
       <div class="main-content">
-        <div class="search">
+        <!-- <div class="search">
           <form class="search-form">
             <input type="text" placeholder="Search" />
             <input type="submit" value="Submit" />
           </form>
-        </div>
+        </div> -->
 
         <div class="post">
           <div class="post-author"></div>
-          <img src="OD-Images/sanjana.jpg" width="100%" />
-          <h3 id="place">Place Name</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea,
-            reiciendis esse ratione laboriosam provident vero. Nostrum sapiente,
-            facere commodi eaque asperiores minima hic incidunt vero error nam.
-            Ipsa, pariatur optio?
-          </p>
-          <p id="longitude">Longitude:</p>
-          <p id="latitude">Latitude:</p>
-          <p id="area">Area :</p>
-          <p id="city">City :</p>
-          <p id="district">District:</p>
-          <p id="state">State:</p>
-          <p id="country">Country:</p>
-          <p id="pincode">Pincode:</p>
-          <p id="category">Category:</p>
-          <p id="visit_time">Visit Time:</p>
+          <img src="OD-Images/<?php echo $param1 ?>" width="100%" />
+          <h3 id="place_name">Place Name:<?php echo $param2 ?></h3>
+          <p id="description">Description:<?php echo $param3 ?></p>
+          <p id="latitude">Latitude:<?php echo $param4 ?></p>
+          <p id="longitude">Longitude:<?php echo $param5 ?></p>
+          <p id="area">Area :<?php echo $param6 ?></p>
+          <p id="city">City :<?php echo $param7 ?></p>
+          <p id="district">District:<?php echo $param8 ?></p>
+          <p id="state">State:<?php echo $param9 ?></p>
+          <p id="country">Country:<?php echo $param10 ?></p>
+          <p id="pincode">Pincode:<?php echo $param11 ?></p>
+          <p id="category">Category:<?php echo $param12 ?></p>
+          <p id="visit_time">Visit Time:<?php echo $param13 ?></p>
+          <p id="rating">Place Rating:<?php echo $param14 ?></p>
 
          
 

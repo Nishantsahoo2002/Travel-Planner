@@ -43,9 +43,15 @@ function validateEmailWithSMTP($recipient)
         $mail->addReplyTo('touristvenues@gmail.com', 'Admin');
         // $mail->getSMTPInstance()->mail($recipient); // Initiate RCPT TO
         $mail->isHTML(true); //Set email format to HTML
-        $mail->Subject = 'Here is the subject';
-        $mail->Body = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Subject = 'Welcome to Tourist Venues';
+        $mail->Body = 'Welcome User, your ultimate destination for
+        hassle-free travel booking! Our user-friendly interface offers a
+        seamless experience, allowing you to effortlessly plan and book
+        your dream vacation.';
+        $mail->AltBody = 'Welcome User, your ultimate destination for
+        hassle-free travel booking! Our user-friendly interface offers a
+        seamless experience, allowing you to effortlessly plan and book
+        your dream vacation.';
         if ($mail->send()) {
             // sleep(3);
             // require 'imapmail.php';
